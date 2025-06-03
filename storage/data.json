@@ -1,0 +1,32 @@
+[
+  {
+    "color": "hghg",
+    "smell": "fgg",
+    "word": {
+      "type": "voice",
+      "file_id": "AwACAgIAAxkBAAOOaDwsGXkMYzBM023OHLmipdTXzooAAuJnAAK3vOBJCFkDvXiM4zQ2BA"
+    },
+    "photo": "AgACAgIAAxkBAAOSaDwsKBqV3rlGoGL4eIcwYRY4r9cAAqHrMRu3vOBJ0aM142ydFB0BAAMCAAN5AAM2BA",
+    "music": {
+      "type": "link",
+      "url": "https://t.me/c/2070728003/357"
+    },
+    "date": "2025-06-01T10:32:11+00:00",
+    "user_id": 994211726
+  },
+  {
+    "color": "jj",
+    "smell": "bb",
+    "word": {
+      "type": "text",
+      "value": "bn"
+    },
+    "photo": "AgACAgIAAxkBAAOSaDwsKBqV3rlGoGL4eIcwYRY4r9cAAqHrMRu3vOBJ0aM142ydFB0BAAMCAAN5AAM2BA",
+    "music": {
+      "type": "link",
+      "url": "https://t.me/c/2070728003/357"
+    },
+    "date": "2025-06-02T08:31:39+00:00",
+    "user_id": 994211726
+  }
+]
