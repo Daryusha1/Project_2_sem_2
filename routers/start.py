@@ -7,9 +7,13 @@ router = Router()
 @router.message(Command("start"))
 async def start_handler(message: types.Message):
     await message.answer(
-        "Привет! Я бот «Ощущения дня».\n\nЯ помогу тебе сохранить настроение, запах, цвет, фото и музыку каждого дня. Готова начать?",
+        "Привет! Я бот «Ощущения дня».\n\n"
+        "Я помогу тебе сохранить настроение, запах, цвет, фото и музыку каждого дня. "
+        "Готов(а) начать?\n\n"
+        "Напиши /help, если хочешь узнать, как со мной работать.",
         reply_markup=get_main_keyboard()
     )
+
 
 from aiogram.filters import Command
 
