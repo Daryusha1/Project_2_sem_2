@@ -33,7 +33,7 @@ async def show_gallery(message: types.Message):
         await message.answer("Пока ничего не записано.")
         return
     entry = data[0]
-    await send_entry(message.chat.id, entry, 0, len(data))
+    await send_entry(message, entry, 0, len(data))
 
 @router.message(DayEntry.color)
 async def process_color(message: types.Message, state: FSMContext):
