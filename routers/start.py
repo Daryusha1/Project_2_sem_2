@@ -11,7 +11,9 @@ async def start_handler(message: types.Message):
         reply_markup=get_main_keyboard()
     )
 
-@router.message(commands=["help"])
+from aiogram.filters import Command
+
+@router.message(Command("help"))
 async def help_handler(message: types.Message):
     text = (
         "🤖 *Бот «Ощущения дня»* помогает тебе сохранять:\n"
