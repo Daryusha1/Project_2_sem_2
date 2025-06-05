@@ -10,10 +10,10 @@ import json
 
 router = Router()
 
-# 🌞 Записать день
+# Записать день
 @router.message(lambda msg: msg.text == "🌞 Записать день")
 async def start_fsm(message: types.Message, state: FSMContext):
-    await message.answer("💛 Какой цвет у твоего дня?", reply_markup=cancel_keyboard())
+    await message.answer("Какой цвет у твоего дня?", reply_markup=cancel_keyboard())
     await state.set_state(DayEntry.color)
 
 @router.message(lambda msg: msg.text == "❌ Отмена")
@@ -38,13 +38,13 @@ async def show_gallery(message: types.Message):
 @router.message(DayEntry.color)
 async def process_color(message: types.Message, state: FSMContext):
     await state.update_data(color=message.text)
-    await message.answer("👃 А какой запах у этого дня?")
+    await message.answer("А какой запах у этого дня?")
     await state.set_state(DayEntry.smell)
 
 @router.message(DayEntry.smell)
 async def process_smell(message: types.Message, state: FSMContext):
     await state.update_data(smell=message.text)
-    await message.answer("📝 Напиши слово дня или пришли голосом")
+    await message.answer("📝 Напиши слово дня")
     await state.set_state(DayEntry.word)
 
 @router.message(DayEntry.word)
@@ -54,7 +54,7 @@ async def process_word(message: types.Message, state: FSMContext):
         await message.answer("🖼 Пришли фото дня")
         await state.set_state(DayEntry.photo)
     else:
-        await message.answer("📝 Напиши слово дня в виде текста.")
+        await message.answer("Напиши слово дня в виде текста.")
 
 @router.message(DayEntry.photo)
 async def process_photo(message: types.Message, state: FSMContext):
@@ -95,10 +95,10 @@ async def process_music(message: types.Message, state: FSMContext):
     with open(file_path, "w", encoding="utf-8") as f:
         json.dump(all_entries, f, ensure_ascii=False, indent=2)
 
-# 📅 Найти по дате
+# Найти по дате
 @router.message(lambda msg: msg.text == "📅 Найти по дате")
 async def ask_date(message: types.Message, state: FSMContext):
-    await message.answer("📆 Введи дату в формате `ДД.ММ.ГГГГ`, например: 01.06.2025", parse_mode="Markdown")
+    await message.answer("Введи дату в формате `ДД.ММ.ГГГГ`, например: 01.06.2025", parse_mode="Markdown")
     await state.set_state(SearchDay.waiting_for_date)
 
 @router.message(SearchDay.waiting_for_date)
