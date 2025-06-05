@@ -10,7 +10,7 @@ router = Router()
 
 @router.message(lambda msg: msg.text == "📅 Найти по дате")
 async def ask_date(message: types.Message, state: FSMContext):
-    await message.answer("📆 Введи дату в формате `ДД.ММ.ГГГГ`, например: 01.06.2025", parse_mode="Markdown")
+    await message.answer("Введи дату в формате `ДД.ММ.ГГГГ`, например: 01.06.2025", parse_mode="Markdown")
     await state.set_state(SearchDay.waiting_for_date)
 
 @router.message(SearchDay.waiting_for_date)
